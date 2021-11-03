@@ -23,7 +23,20 @@ namespace FilesReadWrite
 
             //fileHandler.ReadLatinEncodedContent();
 
-            noteBook.TakeNot(Console.ReadLine());
+            while (true)
+            {
+                Console.Write("New Note: ");
+                string input = Console.ReadLine();
+                if (input == "")
+                {
+                    break;
+                }
+                Console.Clear();
+                noteBook.TakeNot(input);
+                noteBook.GetAllNotes("Notes.txt");
+
+            }
+
         }
     }
 }

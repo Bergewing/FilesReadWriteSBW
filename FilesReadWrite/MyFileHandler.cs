@@ -33,9 +33,3 @@ namespace FilesReadWrite
 
     }
 }
-
-/*I projektet finns det redan en fil som heter testfile1.txt. 
- * Skapa en metod i MyFileHandler som läser ut allt innehåll från testfile1.txt och skriver ut innehållet till consolen.
- * Kalla metoden ReadAllContent. Identifiera själva vilka parametrar och returtyp som är rimligt för denna metod.
-
-Testa att din kod fungerar genom att anropa metoden från Main-metoden.*/

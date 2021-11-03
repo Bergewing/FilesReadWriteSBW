@@ -9,21 +9,32 @@ namespace FilesReadWrite
 {
     class NoteBook
     {
+
         public void TakeNot(string notes)
         {
-            string note = string.Format("{0, -24}{1, 0}", DateTime.Now.ToString(), notes);
-            string header = string.Format("{0, -24}{1, 0}", "Date", "Note");
-            string line = "---------------------------------------";
-            //File.AppendAllText("Notes.txt", Environment.NewLine + header + Environment.NewLine + line + Environment.NewLine + note);
+
+                string note = string.Format("{0, -24}{1, 0}", DateTime.Now.ToString(), notes);
+                string header = string.Format("{0, -24}{1, 0}", "Date", "Note");
+                string line = "---------------------------------------";
+                //File.AppendAllText("Notes.txt", Environment.NewLine + header + Environment.NewLine + line + Environment.NewLine + note);
 
 
-            if (File.Exists("Notes.txt") == false)
-            {
-                File.AppendAllText("Notes.txt", header + Environment.NewLine + line);
-            }
-            File.AppendAllText("Notes.txt",Environment.NewLine + note);
+                if (File.Exists("Notes.txt") == false)
+                {
+                    File.AppendAllText("Notes.txt", header + Environment.NewLine + line);
+                }
+                File.AppendAllText("Notes.txt", Environment.NewLine + note);
         }
 
+        public void GetAllNotes(string note)
+        {
+            string[] myArray = File.ReadAllLines(note);
+            foreach (var line in myArray[2..])
+            {
+                Console.WriteLine(line);
 
+            }
+
+        }    
     }
 }
